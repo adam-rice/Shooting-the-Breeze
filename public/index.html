@@ -5,26 +5,7 @@
   <title>Shooting the Breeze</title>
 </head>
 <body>
-  <h1 id="bigOne"></h1>
   <div id="application"></div>
   <script src="main.bundle.js"></script>
-
-  <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-    apiKey: "AIzaSyA8l9xOVb5fI0RS9ji8390kWH1rh3SlCW4",
-    authDomain: "shooting-the-breeze.firebaseapp.com",
-    databaseURL: "https://shooting-the-breeze.firebaseio.com",
-    storageBucket: "shooting-the-breeze.appspot.com",
-    messagingSenderId: "168784055773"
-    };
-    firebase.initializeApp(config);
-
-    var bigOne = document.getElementById('bigOne')
-    var dbRef = firebase.datebase().ref().child('text')
-    dbRef.on('value', snap => bigOne.innerText = snap.val())
-    
-  </script>
 </body>
 </html>
