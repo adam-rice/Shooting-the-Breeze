@@ -1,7 +1,7 @@
 {
   "name": "shoot-the-breeze",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Simple Chat Application",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -15,9 +15,10 @@
     "type": "git",
     "url": "git+https://github.com/turingschool-examples/shoot-the-breeze.git"
   },
-  "author": "Turing School",
+  "author": "Adam Rice & Andy Young",
   "license": "MIT",
   "bugs": {
+    /*Change to our github-URL*/
     "url": "https://github.com/turingschool-examples/shoot-the-breeze/issues"
   },
   "homepage": "https://github.com/turingschool-examples/shoot-the-breeze#readme",
