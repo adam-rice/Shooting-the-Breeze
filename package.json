@@ -18,10 +18,9 @@
   "author": "Adam Rice & Andy Young",
   "license": "MIT",
   "bugs": {
-    /*Change to our github-URL*/
-    "url": "https://github.com/turingschool-examples/shoot-the-breeze/issues"
+    "url": "https://github.com/andy-young/Shooting-the-Breeze/issues"
   },
-  "homepage": "https://github.com/turingschool-examples/shoot-the-breeze#readme",
+  "homepage": "https://github.com/andy-young/Shooting-the-Breeze/blob/master/README.md",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.14.0",
