@@ -1,7 +1,7 @@
 {
   "name": "shoot-the-breeze",
   "version": "1.0.0",
-  "description": "A starter kit for Turing School's Shoot The Breeze project",
+  "description": "",
   "main": "index.js",
   "directories": {
     "test": "test"
