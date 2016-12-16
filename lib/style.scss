@@ -74,20 +74,29 @@ h1 {
   height: 100%;
   width: 65%;
   background-color: $basic-color;
-  border: 3px solid red;
   padding: 20px;
 }
 
-li {
+.msg-list-item {
+  color: $msg-text-color;
   margin-top: 12px;
 }
 
 h5, h6 {
+  color: $date-color;
+  font-weight: 400;
   display: inline-block;
 }
 
 h6 {
+  color: $user-color;
+  font-weight: 700;
   margin-left: 16px;
+}
+
+.msg-text {
+  margin-top: 8px;
+  font-weight: 400;
 }
 
 #active-user-list {

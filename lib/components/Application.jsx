@@ -47,20 +47,25 @@ export default class Application extends Component {
         <section id="body">
           <article id="message-section">
             <ul>
-              <li>
+              <li className="msg-list-item">
                 <h5>{moment().format('MMMM D, h:mma')}</h5>
                 <h6>Andy</h6>
-                <p>I like to do the cha cha!</p>
+                <p className="msg-text" >I like to do the cha cha!</p>
               </li>
-              <li>
+              <li className="msg-list-item">
                 <h5>{moment().format('MMMM D, h:mma')}</h5>
                 <h6>Andy</h6>
-                <p>Get me my lotion!</p>
+                <p className="msg-text">Get me my lotion! Get me my lotion! Get me my lotion! Get me my lotion! Get me my lotion! Get me my lotion! Get me my lotion! Get me my lotion!</p>
               </li>
             </ul>
           </article>
           <article id="active-user-list">
             <h2>Users</h2>
+            <ul>
+              <li>
+                <p className="user-name"></p>
+              </li>
+            </ul>
           </article>
         </section>
         <Controls />
