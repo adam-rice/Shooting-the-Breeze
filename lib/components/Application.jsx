@@ -44,7 +44,11 @@ export default class Application extends Component {
       <div>
         <Filters />
         <section id="body">
-          <article id="message-section"></article>
+          <article id="message-section">
+            <ul>
+              <li></li>
+            </ul>
+          </article>
           <article id="active-user-list">
             <h2>Users</h2>
           </article>
