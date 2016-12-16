@@ -14,9 +14,7 @@ return (
 
         onChange={(e) => this.setState({ draftMessage: e.target.value })}
       />
-      <p className="charCount">{this.state.draftMessage.length}</p>
-      <button onClick={() => this.addNewMessage()}>Submit</button>
-
+      <p className="charCount">{this.state.draftMessage.length}</p> <button onClick={() => this.addNewMessage()}>Submit</button>
       <ActionBtns id="ClearBtn" text="Clear" disabled={!this.state.newMessage} handleClick= { () => this.emptyInputField() }
       />
     </div>
