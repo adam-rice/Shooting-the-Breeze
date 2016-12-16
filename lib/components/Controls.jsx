@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 export default class Controls extends React.Component{
   constructor() {
-    super()
+    super();
     this.state = {
       draftMessage: '',
       user: null
-    }
+    };
   }
 
   emptyInputField() {
