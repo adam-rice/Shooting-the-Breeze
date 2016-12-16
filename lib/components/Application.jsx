@@ -3,6 +3,7 @@ import firebase, { reference, signIn } from '../firebase';
 import { pick, map, extend } from 'lodash';
 import Controls from './Controls';
 import Filters from './Filters';
+import moment from 'moment';
 
 export default class Application extends Component {
   constructor() {
@@ -46,7 +47,16 @@ export default class Application extends Component {
         <section id="body">
           <article id="message-section">
             <ul>
-              <li></li>
+              <li>
+                <h5>{moment().format('MMMM D, h:mma')}</h5>
+                <h6>Andy</h6>
+                <p>I like to do the cha cha!</p>
+              </li>
+              <li>
+                <h5>{moment().format('MMMM D, h:mma')}</h5>
+                <h6>Andy</h6>
+                <p>Get me my lotion!</p>
+              </li>
             </ul>
           </article>
           <article id="active-user-list">

@@ -74,6 +74,20 @@ h1 {
   height: 100%;
   width: 65%;
   background-color: $basic-color;
+  border: 3px solid red;
+  padding: 20px;
+}
+
+li {
+  margin-top: 12px;
+}
+
+h5, h6 {
+  display: inline-block;
+}
+
+h6 {
+  margin-left: 16px;
 }
 
 #active-user-list {
