@@ -10,6 +10,7 @@ body {
 
 #body {
   height: 70vh;
+  width: 100vw;
 }
 
 header, footer {
@@ -74,21 +75,51 @@ h1 {
   height: 100%;
   width: 65%;
   background-color: $basic-color;
+  padding: 20px;
+}
+
+.msg-list-item {
+  color: $msg-text-color;
+  margin-top: 12px;
+}
+
+h5, h6 {
+  color: $date-color;
+  font-weight: 400;
+  display: inline-block;
+}
+
+h6 {
+  color: $user-color;
+  font-weight: 700;
+  margin-left: 16px;
+}
+
+.msg-text {
+  margin-top: 8px;
+  font-weight: 400;
 }
 
 #active-user-list {
+  background-color: $main-background;
   float: right;
   font-family: $main-font;
+  padding: 24px 0 0 6px;
   height: 100%;
-  width: 35%;
-  background-color: $main-background;
+  width: 30%;
 }
 
-h2 {
-  font-weight: 700;
+h2, .user-name {
   color: $text-color;
-  margin: 15px;
+  font-weight: 700;
   font-family: $main-font;
+  margin-bottom: 15px;
+}
+
+.user-name {
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  margin-bottom: 18px;
 }
 
 #logged-in {
