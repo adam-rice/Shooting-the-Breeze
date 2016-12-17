@@ -9,7 +9,8 @@ export default class FilterInput extends Component {
       <div>
       <input
         id="filter-input"
-        placeholder="Filter"/>
+        placeholder="Filter"
+        onChange={(e) => {filterMessages(e.target.value)}}/>
       </div>
     )
   }
