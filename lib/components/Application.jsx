@@ -3,6 +3,7 @@ import firebase, { reference, signIn, signOut } from '../firebase';
 import { pick, map, extend } from 'lodash';
 import Controls from './Controls';
 import Filters from './Filters';
+import EnterLeave from './EnterLeave';
 import moment from 'moment';
 
 export default class Application extends Component {
@@ -53,7 +54,39 @@ export default class Application extends Component {
 
  // TODO sort messages methods
 
- //
+ footer(user) {
+   if (this.state.user === null) {
+     return (
+       <div></div>)
+   } else {
+     return (
+       <div
+         id="message-maker">
+         <input
+           value={this.state.draftMessage}
+           onChange={(e) => this.setState({ draftMessage: e.target.value })}
+           id="msg-input"
+           placeholder="Message"/>
+         <p id="char-count">{this.state.draftMessage.length}</p>
+         <input
+           id="submit-btn"
+           className="btn"
+           type="button"
+           value="Submit" />
+           {/* onClick={() => this.addNewMessage()}/> */}
+           <input
+             className="btn"
+             id="clear-btn"
+             type="button"
+             value="clear"
+             // disabled={!this.props.draftMessage}
+             onClick={() => { this.emptyInputField() } }
+           />
+         {/* {user ? <p>Hello {user.displayName}</p> : <button onClick={() => signIn()}>Sign In</button> } */}
+     </div>
+     )
+   }
+ }
 
   render() {
     const { user, messages, draftMessage, filteredMessages } = this.state;
@@ -89,7 +122,9 @@ export default class Application extends Component {
           </article>
         </section>
         <EnterLeave signInFunction={signIn} signOutFunction={signOut} user={this.state.user}/>
-        <Controls />
+        {/* <footer>
+         {this.footer()}
+       </footer> */}
       </div>
     )
   }
