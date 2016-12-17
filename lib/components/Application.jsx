@@ -49,8 +49,15 @@ export default class Application extends Component {
    this.setState({draftMessage: ''});
  }
 
+ // TODO filter message&user methods
+
+ // TODO sort messages methods
+
+ //
+
   render() {
-    const { user, messages, draftMessage } = this.state;
+    const { user, messages, draftMessage, filteredMessages } = this.state;
+
     return (
       <div>
         <Filters />
