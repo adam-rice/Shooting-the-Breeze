@@ -90,6 +90,7 @@ export default class Application extends Component {
 
   render() {
     const { user, messages, draftMessage, filteredMessages } = this.state;
+    const messageList = this.filtered();
     return (
       <div>
         <header>
@@ -101,11 +102,11 @@ export default class Application extends Component {
         <section id="body">
           <article id="message-section">
             <Messages
-              messages={this.state.messages}
+              messages={messageList}
               filterMessageSection={this.state.filter}/>
           </article>
           <Users
-            messages={this.state.messages}
+            messages={messageList}
             currentUser={this.state.user}/>
         </section>
         <EnterLeave
