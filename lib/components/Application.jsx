@@ -86,17 +86,7 @@ export default class Application extends Component {
           <article id="message-section">
             <Messages messages={this.state.messages} />
           </article>
-          <article id="active-user-list">
-            <h2>Users</h2>
-            <ul>
-              <li className="active-user-list-item" >
-                <p className="user-name">Andy (an@happyFINGERS.io)</p>
-              </li>
-              <li className="active-user-list-item" >
-                <p className="user-name">Billy (bg@happyFINGERS.io)</p>
-              </li>
-            </ul>
-          </article>
+          <Users messages={this.state.messages} currentUser={this.state.user}/>
         </section>
         <EnterLeave signInFunction={signIn} signOutFunction={signOut} user={this.state.user}/>
         <div>
