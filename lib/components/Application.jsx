@@ -53,9 +53,14 @@ export default class Application extends Component {
    this.setState({draftMessage: ''});
  }
 
- // TODO filter message&user methods
+ filterMessageSection(filterString) {
+   this.setState(
+     {filteredMessages: filter(this.state.messages, (message) => {
+       return message.content.toLowerCase().includes(filterString.toLowerCase());
+     }),
+   filterString: filterString});
+ }
 
- // TODO sort messages methods
 
  createFooter(user, draftMessage) {
   if (this.state.user === null) {
