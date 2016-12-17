@@ -88,8 +88,7 @@ export default class Application extends Component {
             </ul>
           </article>
         </section>
-        <Controls />
-        {user ? <p>Hello {user.displayName}</p> : <button onClick={() => signIn()}>Sign In</button> }
+        <Controls signInFunction={signIn} signOutFunction={signOut} user={this.state.user} />
       </div>
     )
   }
