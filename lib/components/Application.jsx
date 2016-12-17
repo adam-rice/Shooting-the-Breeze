@@ -4,6 +4,11 @@ import { pick, map, extend } from 'lodash';
 import Controls from './Controls';
 import Filters from './Filters';
 import EnterLeave from './EnterLeave';
+import MessageInput from './MessageInput';
+import CharacterCount from './CharacterCount';
+import SubmitButton from './SubmitButton';
+import ClearButton from './ClearButton';
+
 import moment from 'moment';
 
 export default class Application extends Component {
@@ -55,19 +60,20 @@ export default class Application extends Component {
  // TODO sort messages methods
 
  createFooter(user) {
-   if (this.state.user === null) {
-       return (
-         <div></div>)
-     } else {
-       return ( <div id="message-maker">
-           <MessageInput draftMessageProp={this.state.draftMessage} stateProp={this.setMessageState.bind(this)}/>
-           <CharacterCount draftMessageProp={this.state.draftMessage}/>
-           <SubmitButton draftMessageProp={this.state.draftMessage} addMessageFunction={this.addNewMessage.bind(this)}/>
-           <ClearButton draftMessageProp={this.state.draftMessage} clearMessageFunction={this.clearMessage.bind(this)}/>
-           </div>
-       )
-     }
- }
+  if (this.state.user === null) {
+    return (
+      <div></div>)
+    } else {
+      return (
+        <div id="message-maker">
+          <MessageInput draftMessageProp={this.state.draftMessage} stateProp={this.setMsgState.bind(this)}/>
+          <CharacterCount draftMessageProp={this.state.draftMessage}/>
+          <SubmitButton draftMessageProp={this.state.draftMessage} addMessageFunction={this.addNewMessage.bind(this)}/>
+          <ClearButton draftMessageProp={this.state.draftMessage} clearMessageFunction={this.clearMsg.bind(this)}/>
+        </div>
+      )
+    }
+  }
 
   render() {
     const { user, messages, draftMessage, filteredMessages } = this.state;
