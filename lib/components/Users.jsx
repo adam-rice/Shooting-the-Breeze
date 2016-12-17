@@ -13,7 +13,11 @@ export default class Users extends Component {
 
   eachName(u, userClass) {
     return (
-      <li className={userClass}><p className="user-name">{u.userName.split(' ').slice(0,1)} ({u.email})</p></li>
+      <li
+        className={userClass}
+        onClick= {() => console.log({u})}>
+        <p className="user-name">{u.userName.split(' ').slice(0,1)} ({u.email})</p>
+      </li>
       //TODO set class for active user for the dot
     )
   }
