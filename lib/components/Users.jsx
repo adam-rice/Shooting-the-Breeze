@@ -14,6 +14,7 @@ export default class Users extends Component {
   eachName(u, userClass) {
     return (
       <li
+        key={u.id}
         className={userClass}
         onClick= {() => console.log({u})}>
         <p className="user-name">{u.userName.split(' ').slice(0,1)} ({u.email})</p>
