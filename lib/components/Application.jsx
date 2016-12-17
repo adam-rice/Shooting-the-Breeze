@@ -88,7 +88,8 @@ export default class Application extends Component {
             </ul>
           </article>
         </section>
-        <Controls signInFunction={signIn} signOutFunction={signOut} user={this.state.user} />
+        <EnterLeave signInFunction={signIn} signOutFunction={signOut} user={this.state.user}/>
+        <Controls />
       </div>
     )
   }
