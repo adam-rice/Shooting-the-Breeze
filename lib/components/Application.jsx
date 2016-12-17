@@ -19,8 +19,8 @@ export default class Application extends Component {
       messages: [],
       draftMessage: '',
       user: null,
-      filteredMessages: []
-      // TODO filterString???
+      filteredMessages: [],
+      filterString: ''
     };
   }
 
