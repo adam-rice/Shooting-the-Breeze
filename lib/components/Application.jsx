@@ -34,10 +34,7 @@ export default class Application extends Component {
   }
 
   addNewMessage() {
-    // const { user, draftMessage } = this.state;
-    const user = this.props.user
-    const draftMessage = this.state.draftMessage
-
+    const { user, draftMessage } = this.state;
     reference.push({
       user: pick(user, 'displayName', 'email', 'uid'),
       content: draftMessage,
@@ -66,10 +63,14 @@ export default class Application extends Component {
     } else {
       return (
         <div id="message-maker">
-          <MessageInput draftMessageProp={this.state.draftMessage} stateProp={this.setMsgState.bind(this)}/>
-          <CharacterCount draftMessageProp={this.state.draftMessage}/>
-          <SubmitButton draftMessageProp={this.state.draftMessage} addMessageFunction={this.addNewMessage.bind(this)}/>
-          <ClearButton draftMessageProp={this.state.draftMessage} clearMessageFunction={this.clearMsg.bind(this)}/>
+          <MessageInput
+            draftMessageProp={this.state.draftMessage} stateProp={this.setMsgState.bind(this)}/>
+          <CharacterCount
+            draftMessageProp={this.state.draftMessage}/>
+          <SubmitButton
+            draftMessageProp={this.state.draftMessage} addMessageFunction={this.addNewMessage.bind(this)}/>
+          <ClearButton
+            draftMessageProp={this.state.draftMessage} clearMessageFunction={this.clearMsg.bind(this)}/>
         </div>
       )
     }
