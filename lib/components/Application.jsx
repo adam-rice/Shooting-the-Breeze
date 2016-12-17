@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import firebase, { reference, signIn, signOut } from '../firebase';
 import { pick, map, extend, filter } from 'lodash';
 import FilterInput from './FilterInput';

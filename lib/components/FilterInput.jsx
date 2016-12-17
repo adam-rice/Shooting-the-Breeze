@@ -10,6 +10,7 @@ export default class FilterInput extends Component {
       <input
         id="filter-input"
         placeholder="Filter"
+        aria-label="filter existing messages"
         onChange={(e) => {filterMessageSection(e.target.value)}}/>
       </div>
     )

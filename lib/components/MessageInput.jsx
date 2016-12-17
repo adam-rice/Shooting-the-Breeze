@@ -7,6 +7,7 @@ export default class MessageInput extends Component {
       <input
         id="msg-input"
         placeholder="Message"
+        aria-label="submit your new message"
         value={this.props.draftMessageProp}
         onChange={this.props.stateProp} />
     )
