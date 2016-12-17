@@ -8,11 +8,13 @@ export default class Sort extends Component {
         <input
           className="btn"
           type="button"
-          value="Sort ↑"/>
+          value="Sort ↑"
+          onClick={this.props.sortFunction}/>
         <input
           className="btn"
           type="button"
-          value="Sort ↓"/>
+          value="Sort ↓"
+          onClick={this.props.sortFunction}/>
       </section>
     )
   }
