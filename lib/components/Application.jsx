@@ -41,9 +41,13 @@ export default class Application extends Component {
     this.setState({ draftMessage: '' });
   }
 
-  setMessageState(e) {
+  setMsgState(e) {
     this.setState( {draftMessage: e.target.value} );
   }
+
+  clearMsg(){
+   this.setState({draftMessage: ''});
+ }
 
   render() {
     const { user, messages, draftMessage } = this.state;
