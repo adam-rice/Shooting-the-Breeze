@@ -7,6 +7,8 @@ export default class ClearButton extends Component {
       <input
         id="clear-btn"
         className="btn"
+        aria-label="clear button to clear out contents of the draft message input field"
+        tabIndex="0"
         value="Clear"
         type="button"
         disabled={this.props.draftMessageProp === ''}

@@ -17,7 +17,10 @@ export default class Messages extends Component {
   render() {
     return (
       <ul>
-        { this.props.messages.map(m => <li key={m.key} className="msg-list-item">
+        { this.props.messages.map(m =>
+        <li key={m.key}
+            tabIndex="0"
+            className="msg-list-item">
           <h5 className="message-date"> {m.createdAt}</h5>
           {/* mobile version */}
           <h6> {m.user.displayName.split(' ').slice(0,1)}</h6>

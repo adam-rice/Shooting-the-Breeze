@@ -109,7 +109,7 @@ export default class Application extends Component {
     return (
       <div>
         <header>
-          <h1>Shoot the Breeze</h1>
+          <h1 tabIndex="0" >Shoot the Breeze</h1>
           <FilterInput
             filterMessageSection={this.filterMessageSection.bind(this)}/>
           <Sort

@@ -13,7 +13,7 @@ export default class CharacterCount extends Component {
   render() {
     return (
       <div id="char-count">
-        <p>{this.counter()}</p>
+        <p tabIndex="0" aria-label="maximum characters allowed is 140">{this.counter()}</p>
       </div>
     )
   }
