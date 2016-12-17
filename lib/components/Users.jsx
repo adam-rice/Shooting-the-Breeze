@@ -16,7 +16,7 @@ export default class Users extends Component {
       <li
         key={u.id}
         className={userClass}
-        onClick= {() => console.log({u})}>
+        onClick={() => {this.props.filterUserMessages(u)}}>
         <p className="user-name">{u.userName.split(' ').slice(0,1)} ({u.email})</p>
       </li>
       //TODO set class for active user for the dot
@@ -43,4 +43,4 @@ export default class Users extends Component {
   }
 }
 
-Users.defaultProps = {messages: []};
+Users.defaultProps = {messages: [], filterUserMessages: []};
