@@ -15,7 +15,7 @@ body {
 
 header, footer {
   background-color: $secondary-background;
-  height: 10vh;
+  // height: 10vh;
   width: 100%;
 }
 
@@ -24,12 +24,12 @@ header {
   align-items: center;
 }
 
-footer {
-  bottom:0px;
-  position:fixed;
-  left:0px;
-  height: 20vh;
-}
+// footer {
+//   bottom:0px;
+//   position:fixed;
+//   left:0px;
+//   height: 20vh;
+// }
 
 h1 {
   display: inline-block;
@@ -122,7 +122,7 @@ h2, .user-name {
 }
 
 #logged-in {
-  height: 60px;
+  // height: 60px;
   width: 100%;
   background-color: $user-login-background;
 }

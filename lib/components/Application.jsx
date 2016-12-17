@@ -54,38 +54,19 @@ export default class Application extends Component {
 
  // TODO sort messages methods
 
- footer(user) {
+ createFooter(user) {
    if (this.state.user === null) {
-     return (
-       <div></div>)
-   } else {
-     return (
-       <div
-         id="message-maker">
-         <input
-           value={this.state.draftMessage}
-           onChange={(e) => this.setState({ draftMessage: e.target.value })}
-           id="msg-input"
-           placeholder="Message"/>
-         <p id="char-count">{this.state.draftMessage.length}</p>
-         <input
-           id="submit-btn"
-           className="btn"
-           type="button"
-           value="Submit" />
-           {/* onClick={() => this.addNewMessage()}/> */}
-           <input
-             className="btn"
-             id="clear-btn"
-             type="button"
-             value="clear"
-             // disabled={!this.props.draftMessage}
-             onClick={() => { this.emptyInputField() } }
-           />
-         {/* {user ? <p>Hello {user.displayName}</p> : <button onClick={() => signIn()}>Sign In</button> } */}
-     </div>
-     )
-   }
+       return (
+         <div></div>)
+     } else {
+       return ( <div id="message-maker">
+           <MessageInput draftMessageProp={this.state.draftMessage} stateProp={this.setMessageState.bind(this)}/>
+           <CharacterCount draftMessageProp={this.state.draftMessage}/>
+           <SubmitButton draftMessageProp={this.state.draftMessage} addMessageFunction={this.addNewMessage.bind(this)}/>
+           <ClearButton draftMessageProp={this.state.draftMessage} clearMessageFunction={this.clearMessage.bind(this)}/>
+           </div>
+       )
+     }
  }
 
   render() {
@@ -122,9 +103,9 @@ export default class Application extends Component {
           </article>
         </section>
         <EnterLeave signInFunction={signIn} signOutFunction={signOut} user={this.state.user}/>
-        {/* <footer>
-         {this.footer()}
-       </footer> */}
+        <footer>
+         {this.createFooter()}
+       </footer>
       </div>
     )
   }
