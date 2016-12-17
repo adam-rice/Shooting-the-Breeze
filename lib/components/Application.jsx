@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import firebase, { reference, signIn, signOut } from '../firebase';
 import { pick, map, extend } from 'lodash';
-import Filters from './Filters';
+import FilterInput from './FilterInput';
+import Sort from './Sort';
 import EnterLeave from './EnterLeave';
 import MessageInput from './MessageInput';
 import CharacterCount from './CharacterCount';
@@ -79,7 +80,11 @@ export default class Application extends Component {
     const { user, messages, draftMessage, filteredMessages } = this.state;
     return (
       <div>
-        <Filters />
+        <header>
+          <h1>Shoot the Breeze</h1>
+          <FilterInput />
+          <Sort />
+        </header>
         <section id="body">
           <article id="message-section">
             <Messages
