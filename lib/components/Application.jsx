@@ -80,6 +80,14 @@ export default class Application extends Component {
     }
   }
 
+  filtered () {
+    if (this.state.filterString) {
+      return this.state.filteredMessages
+    } else {
+      return this.state.messages
+    }
+  }
+
   render() {
     const { user, messages, draftMessage, filteredMessages } = this.state;
     return (
