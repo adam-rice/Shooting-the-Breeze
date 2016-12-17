@@ -132,6 +132,15 @@ h2, .user-name {
   letter-spacing: 0.3px;
 }
 
+//TODO update to red dot or something
+.user-list-current-user {
+  text-decoration: underline;
+}
+
+.user-list-user {
+  text-decoration: none;
+}
+
 #logged-in {
   position: fixed;
   bottom: 10vh;

@@ -1,14 +1,41 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { sortedUniqBy, uniqBy } from 'lodash';
 
+export default class Users extends Component {
+  get uniqueUsers() {
+    let users = this.props.messages.map(m => {
+      return { userName: m.user.displayName, id: m.user.uid, email: m.user.email};
+    });
+    let uniqueUsers = uniqBy(users, 'id');
+    return sortedUniqBy(uniqueUsers, 'userName');
+  }
 
+  eachName(u, userClass) {
+    return (
+      <li className={userClass}><p className="user-name">{u.userName.split(' ').slice(0,1)} ({u.email})</p></li>
+      //TODO set class for active user for the dot
+    )
+  }
 
-article id="active-user-list">
-  <h2>Users</h2>
-  <ul>
-    <li className="active-user-list-item" >
-      <p className="user-name">Andy (an@happyFINGERS.io)</p>
-    </li>
-    <li className="active-user-list-item" >
-      <p className="user-name">Billy (bg@happyFINGERS.io)</p>
-    </li>
-  </ul>
-</article>
+  render() {
+    let userListActiveUser = 'user-list-current-user';
+    let userListUser = 'user-list-user';
+    return (
+      <article id="active-user-list">
+        <h2>Users</h2>
+        <ul>
+          {this.uniqueUsers.map(u => {
+            if (u.id === this.props.currentUser.uid) {
+              return this.eachName(u, userListActiveUser)
+            } else {
+              return this.eachName(u, userListUser)
+            }
+          })}
+        </ul>
+      </article>
+    )
+  }
+}
+
+Users.defaultProps = {messages: []};

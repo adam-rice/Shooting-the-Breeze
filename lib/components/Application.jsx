@@ -9,6 +9,7 @@ import CharacterCount from './CharacterCount';
 import SubmitButton from './SubmitButton';
 import ClearButton from './ClearButton';
 import Messages from './Messages';
+import Users from './Users';
 
 import moment from 'moment';
 
