@@ -61,13 +61,19 @@ export default class Application extends Component {
    filterString: filterString});
  }
 
- filterUserMessages(user) {
+ filterByUser(user) {
     this.state.filterString = 1;
     this.setState(
       {filteredMessages: filter(this.state.messages, (message) => {
         return message.user.email.includes(user.email);
       })
     });
+  }
+
+  sort() {
+    let messageArray = this.state.messages;
+    let reverseArray = messageArray.reverse();
+    this.setState({messages: reverseArray});
   }
 
  createFooter(user, draftMessage) {
@@ -117,7 +123,7 @@ export default class Application extends Component {
           <Users
             messages={messageList}
             currentUser={this.state.user}
-            filterUserMessages={this.filterUserMessages.bind(this)}/>
+            filterByUser={this.filterByUser.bind(this)}/>
         </section>
         <EnterLeave
           signInFunction={signIn}
