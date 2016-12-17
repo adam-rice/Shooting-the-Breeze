@@ -61,6 +61,15 @@ export default class Application extends Component {
    filterString: filterString});
  }
 
+ filterUserMessages(user) {
+    this.state.filterString = 1;
+    this.setState(
+      {filteredMessages: filter(this.state.messages, (message) => {
+        return message.user.includes(user.email);
+      })
+    });
+  }
+
  createFooter(user, draftMessage) {
   if (this.state.user === null) {
     return (<div id="blank-footer"></div>)
