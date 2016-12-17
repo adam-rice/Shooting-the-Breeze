@@ -56,7 +56,7 @@ export default class Application extends Component {
 
  // TODO sort messages methods
 
- createFooter(user) {
+ createFooter(user, draftMessage) {
   if (this.state.user === null) {
     return (<div id="blank-footer"></div>)
     } else {
@@ -83,6 +83,7 @@ export default class Application extends Component {
         <Filters />
         <section id="body">
           <article id="message-section">
+            <Messages />
             <ul>
               <li className="msg-list-item">
                 <h5>{moment().format('MMMM D, h:mma')}</h5>
