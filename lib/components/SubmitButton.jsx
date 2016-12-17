@@ -10,9 +10,7 @@ export default class SubmitButton extends Component {
         className="btn"
         value="Submit"
         type="button"
-        //TODO not disabled when dm length is ''
-        disabled={this.props.draftMessageProp === ''}
-        disabled={this.props.draftMessageProp.length >= 140}
+        disabled={this.props.draftMessageProp.length >= 140 || this.props.draftMessageProp.length === 0 }
         onClick={this.props.addMessageFunction}
       />
     )
