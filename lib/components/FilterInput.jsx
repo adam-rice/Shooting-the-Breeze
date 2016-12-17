@@ -4,13 +4,13 @@ import { filter } from 'lodash';
 
 export default class FilterInput extends Component {
   render() {
-    const {filterMessages} = this.props;
+    const {filterMessageSection} = this.props;
     return (
       <div>
       <input
         id="filter-input"
         placeholder="Filter"
-        onChange={(e) => {filterMessages(e.target.value)}}/>
+        onChange={(e) => {filterMessageSection(e.target.value)}}/>
       </div>
     )
   }

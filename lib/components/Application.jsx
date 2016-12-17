@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import firebase, { reference, signIn, signOut } from '../firebase';
-import { pick, map, extend } from 'lodash';
+import { pick, map, extend, filter } from 'lodash';
 import FilterInput from './FilterInput';
 import Sort from './Sort';
 import EnterLeave from './EnterLeave';
@@ -61,7 +61,6 @@ export default class Application extends Component {
    filterString: filterString});
  }
 
-
  createFooter(user, draftMessage) {
   if (this.state.user === null) {
     return (<div id="blank-footer"></div>)
@@ -94,7 +93,8 @@ export default class Application extends Component {
         <section id="body">
           <article id="message-section">
             <Messages
-              messages={this.state.messages}/>
+              messages={this.state.messages}
+              filterMessageSection={this.state.filter}/>
           </article>
           <Users
             messages={this.state.messages}
