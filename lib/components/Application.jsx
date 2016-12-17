@@ -65,7 +65,7 @@ export default class Application extends Component {
     this.state.filterString = 1;
     this.setState(
       {filteredMessages: filter(this.state.messages, (message) => {
-        return message.user.includes(user.email);
+        return message.user.email.includes(user.email);
       })
     });
   }
