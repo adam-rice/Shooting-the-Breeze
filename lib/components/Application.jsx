@@ -116,7 +116,8 @@ export default class Application extends Component {
           </article>
           <Users
             messages={messageList}
-            currentUser={this.state.user}/>
+            currentUser={this.state.user}
+            filterUserMessages={this.filterUserMessages.bind(this)}/>
         </section>
         <EnterLeave
           signInFunction={signIn}
