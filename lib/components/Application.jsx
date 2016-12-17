@@ -112,7 +112,9 @@ export default class Application extends Component {
           <h1>Shoot the Breeze</h1>
           <FilterInput
             filterMessageSection={this.filterMessageSection.bind(this)}/>
-          <Sort />
+          <Sort
+            messages={messageList}
+            sortFunction={this.sort.bind(this)}/>
         </header>
         <section id="body">
           <article id="message-section">
