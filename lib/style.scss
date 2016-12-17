@@ -13,9 +13,9 @@ body {
   width: 100vw;
 }
 
-header, footer {
+header, footer, #blank-footer {
   background-color: $secondary-background;
-  // height: 10vh;
+  height: 10vh;
   width: 100%;
 }
 
@@ -24,12 +24,17 @@ header {
   align-items: center;
 }
 
-// footer {
-//   bottom:0px;
-//   position:fixed;
-//   left:0px;
-//   height: 20vh;
-// }
+footer, #blank-footer {
+  bottom:0px;
+  position:fixed;
+  left:0px;
+}
+
+#blank-footer {
+  background-color: $user-login-background;
+  z-index: -1;
+  padding: 15px;
+}
 
 h1 {
   display: inline-block;
@@ -122,7 +127,9 @@ h2, .user-name {
 }
 
 #logged-in {
-  // height: 60px;
+  position: fixed;
+  bottom: 10vh;
+  height: 5vh;
   width: 100%;
   background-color: $user-login-background;
 }
@@ -134,7 +141,7 @@ span {
 h3 {
   color: $basic-color;
   font-family: $main-font;
-  padding: 20px;
+  padding: 10px;
 }
 
 #msg-input {

@@ -58,11 +58,10 @@ export default class Application extends Component {
 
  createFooter(user) {
   if (this.state.user === null) {
-    return (
-      <div></div>)
+    return (<div id="blank-footer"></div>)
     } else {
       return (
-        <div id="message-maker">
+        <footer>
           <MessageInput
             draftMessageProp={this.state.draftMessage} stateProp={this.setMsgState.bind(this)}/>
           <CharacterCount
@@ -71,7 +70,7 @@ export default class Application extends Component {
             draftMessageProp={this.state.draftMessage} addMessageFunction={this.addNewMessage.bind(this)}/>
           <ClearButton
             draftMessageProp={this.state.draftMessage} clearMessageFunction={this.clearMsg.bind(this)}/>
-        </div>
+        </footer>
       )
     }
   }
@@ -110,9 +109,9 @@ export default class Application extends Component {
           </article>
         </section>
         <EnterLeave signInFunction={signIn} signOutFunction={signOut} user={this.state.user}/>
-        <footer>
+        <div>
          {this.createFooter()}
-       </footer>
+       </div>
       </div>
     )
   }
