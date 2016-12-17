@@ -25,8 +25,7 @@ export default class Controls extends React.Component{
             onChange={(e) => this.setState({ draftMessage: e.target.value })}
             id="msg-input"
             placeholder="Message"/>
-          <p
-            id="char-count">{this.state.draftMessage.length}</p>
+          <p id="char-count">{this.state.draftMessage.length}</p>
           <input
             id="submit-btn"
             className="btn"

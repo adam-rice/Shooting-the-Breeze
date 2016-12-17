@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import firebase, { reference, signIn } from '../firebase';
+import firebase, { reference, signIn, signOut } from '../firebase';
 import { pick, map, extend } from 'lodash';
 import Controls from './Controls';
 import Filters from './Filters';
@@ -10,8 +10,11 @@ export default class Application extends Component {
     super();
     this.state = {
       messages: [],
-      user: null  //go away
-    }
+      draftMessage: '',
+      user: null,
+      filteredMessages: []
+      // TODO filterString???
+    };
   }
 
   componentDidMount() {
@@ -21,7 +24,6 @@ export default class Application extends Component {
         messages: map(messages, (val, key) => extend(val, { key }))
       });
     });
-
     firebase.auth().onAuthStateChanged(user => this.setState({ user }));
   }
 
@@ -33,7 +35,8 @@ export default class Application extends Component {
     reference.push({
       user: pick(user, 'displayName', 'email', 'uid'),
       content: draftMessage,
-      createdAt: Date.now()
+      createdAt: moment().format('MMMM D, h:mma')
+      // TODO mobile version of date
     });
 
     // this.setState({ draftMessage: '' });
