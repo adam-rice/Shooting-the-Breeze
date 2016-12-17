@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-
 export default class SubmitButton extends Component {
   render() {
     return (

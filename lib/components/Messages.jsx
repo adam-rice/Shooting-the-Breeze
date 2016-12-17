@@ -3,16 +3,15 @@ import ReactDOM from 'react-dom';
 import { pick, map, extend } from 'lodash';
 
 export default class Messages extends Component {
-
   get messageDecision() {
     let messages = [];
-  if (this.props.filterMessageSection !== '') {
-    messages = this.props.filterMessageSection;
-  } else {
-    messages = this.props.messages;
+    if (this.props.filterMessageSection !== '') {
+      messages = this.props.filterMessageSection;
+    } else {
+      messages = this.props.messages;
+    }
+    return messages;
   }
-  return messages;
-}
 
   render() {
     return (
