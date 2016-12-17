@@ -84,7 +84,7 @@ export default class Application extends Component {
         <Filters />
         <section id="body">
           <article id="message-section">
-            <Messages />
+            <Messages messages={this.state.messages} />
           </article>
           <article id="active-user-list">
             <h2>Users</h2>
