@@ -87,13 +87,14 @@ export default class Application extends Component {
       <div>
         <header>
           <h1>Shoot the Breeze</h1>
-          <FilterInput />
+          <FilterInput
+            filterMessageSection={this.filterMessageSection.bind(this)}/>
           <Sort />
         </header>
         <section id="body">
           <article id="message-section">
             <Messages
-              messages={this.state.messages} />
+              messages={this.state.messages}/>
           </article>
           <Users
             messages={this.state.messages}
