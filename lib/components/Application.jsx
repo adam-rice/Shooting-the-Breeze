@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import firebase, { reference, signIn, signOut } from '../firebase';
 import { pick, map, extend } from 'lodash';
-import Controls from './Controls';
 import Filters from './Filters';
 import EnterLeave from './EnterLeave';
 import MessageInput from './MessageInput';
@@ -10,7 +9,6 @@ import SubmitButton from './SubmitButton';
 import ClearButton from './ClearButton';
 import Messages from './Messages';
 import Users from './Users';
-
 import moment from 'moment';
 
 export default class Application extends Component {
@@ -79,17 +77,22 @@ export default class Application extends Component {
 
   render() {
     const { user, messages, draftMessage, filteredMessages } = this.state;
-
     return (
       <div>
         <Filters />
         <section id="body">
           <article id="message-section">
-            <Messages messages={this.state.messages} />
+            <Messages
+              messages={this.state.messages} />
           </article>
-          <Users messages={this.state.messages} currentUser={this.state.user}/>
+          <Users
+            messages={this.state.messages}
+            currentUser={this.state.user}/>
         </section>
-        <EnterLeave signInFunction={signIn} signOutFunction={signOut} user={this.state.user}/>
+        <EnterLeave
+          signInFunction={signIn}
+          signOutFunction={signOut}
+          user={this.state.user}/>
         <div>
          {this.createFooter()}
        </div>
