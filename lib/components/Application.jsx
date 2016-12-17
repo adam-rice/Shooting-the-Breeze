@@ -38,8 +38,11 @@ export default class Application extends Component {
       createdAt: moment().format('MMMM D, h:mma')
       // TODO mobile version of date
     });
+    this.setState({ draftMessage: '' });
+  }
 
-    // this.setState({ draftMessage: '' });
+  setMessageState(e) {
+    this.setState( {draftMessage: e.target.value} );
   }
 
   render() {
