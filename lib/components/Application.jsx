@@ -8,6 +8,7 @@ import MessageInput from './MessageInput';
 import CharacterCount from './CharacterCount';
 import SubmitButton from './SubmitButton';
 import ClearButton from './ClearButton';
+import Messages from './Messages';
 
 import moment from 'moment';
 
@@ -84,18 +85,6 @@ export default class Application extends Component {
         <section id="body">
           <article id="message-section">
             <Messages />
-            <ul>
-              <li className="msg-list-item">
-                <h5>{moment().format('MMMM D, h:mma')}</h5>
-                <h6>Andy</h6>
-                <p className="msg-text" >I like to do the cha cha!</p>
-              </li>
-              <li className="msg-list-item">
-                <h5>{moment().format('MMMM D, h:mma')}</h5>
-                <h6>Andy</h6>
-                <p className="msg-text">Get me my lotion! Get me my lotion! Get me my lotion! Get me my lotion! Get me my lotion! Get me my lotion! Get me my lotion! Get me my lotion!</p>
-              </li>
-            </ul>
           </article>
           <article id="active-user-list">
             <h2>Users</h2>
