@@ -60,7 +60,7 @@ h1 {
   margin: 0 25px 0 auto;
 }
 
-.btn {
+.btn, #sign-out {
   border: none;
   border-radius: 5px;
   background-color: $sort-btn-background;
@@ -73,6 +73,12 @@ h1 {
   &:hover {
     cursor: pointer;
   }
+}
+
+#sign-out {
+  font-size: 10px;
+  height: 18px;
+  width: 75px;
 }
 
 #message-section {
@@ -142,6 +148,10 @@ h3 {
   color: $basic-color;
   font-family: $main-font;
   padding: 10px;
+}
+
+#sign-out, h3 {
+  display: inline-block;
 }
 
 #msg-input {
