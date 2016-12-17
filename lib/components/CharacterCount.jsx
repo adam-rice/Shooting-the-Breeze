@@ -8,3 +8,5 @@ export default class CharacterCount extends Component {
     )
   }
 }
+
+CharacterCount.defaultProps = {draftMessageProp: ''};
