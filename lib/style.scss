@@ -13,7 +13,7 @@ body {
   width: 100vw;
 }
 
-header, footer {
+header, footer, #blank-footer {
   background-color: $secondary-background;
   height: 10vh;
   width: 100%;
@@ -24,11 +24,16 @@ header {
   align-items: center;
 }
 
-footer {
+footer, #blank-footer {
   bottom:0px;
   position:fixed;
   left:0px;
-  height: 20vh;
+}
+
+#blank-footer {
+  background-color: $user-login-background;
+  z-index: -1;
+  padding: 15px;
 }
 
 h1 {
@@ -55,7 +60,7 @@ h1 {
   margin: 0 25px 0 auto;
 }
 
-.btn {
+.btn, #sign-out {
   border: none;
   border-radius: 5px;
   background-color: $sort-btn-background;
@@ -68,6 +73,12 @@ h1 {
   &:hover {
     cursor: pointer;
   }
+}
+
+#sign-out {
+  font-size: 10px;
+  height: 18px;
+  width: 75px;
 }
 
 #message-section {
@@ -118,12 +129,22 @@ h2, .user-name {
 
 .user-name {
   font-weight: 400;
-  letter-spacing: 0.6px;
-  margin-bottom: 18px;
+  letter-spacing: 0.3px;
+}
+
+//TODO update to green dot or something
+.user-list-current-user {
+  text-decoration: underline;
+}
+
+.user-list-user {
+  text-decoration: none;
 }
 
 #logged-in {
-  height: 60px;
+  position: fixed;
+  bottom: 10vh;
+  height: 5vh;
   width: 100%;
   background-color: $user-login-background;
 }
@@ -135,7 +156,11 @@ span {
 h3 {
   color: $basic-color;
   font-family: $main-font;
-  padding: 20px;
+  padding: 10px;
+}
+
+#sign-out, h3 {
+  display: inline-block;
 }
 
 #msg-input {
@@ -148,7 +173,7 @@ h3 {
   display: inline-block;
   color: $basic-color;
   font-family: $main-font;
-
+  width: 24px;
 }
 
 #submit-btn {
