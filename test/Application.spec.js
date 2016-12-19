@@ -6,7 +6,7 @@ import sinon from 'sinon';
 import Application from '../lib/components/Application';
 import FilterInput from '../lib/components/FilterInput';
 import Sort from '../lib/components/Sort';
-
+import Messages from '../lib/components/Messages';
 
 describe('Application', () => {
   it('renders as a <div>', () => {
@@ -19,6 +19,13 @@ describe('<Application />', () => {
   it('renders one <FilterInput /> component', () => {
     const wrapper = shallow(<Application />);
     expect(wrapper.find(FilterInput)).to.have.length(1);
+  });
+});
+
+describe('<Application />', () => {
+  it('renders one <Messages /> component', () => {
+    const wrapper = shallow(<Application />);
+    expect(wrapper.find(Messages)).to.have.length(1);
   });
 });
 
