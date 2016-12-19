@@ -7,6 +7,8 @@ import Application from '../lib/components/Application';
 import FilterInput from '../lib/components/FilterInput';
 import Sort from '../lib/components/Sort';
 import Messages from '../lib/components/Messages';
+import Users from '../lib/components/Users';
+
 
 describe('Application', () => {
   it('renders as a <div>', () => {
@@ -23,6 +25,13 @@ describe('<Application />', () => {
 });
 
 describe('<Application />', () => {
+  it('renders one <Sort /> component', () => {
+    const wrapper = shallow(<Application />);
+    expect(wrapper.find(Sort)).to.have.length(1);
+  });
+});
+
+describe('<Application />', () => {
   it('renders one <Messages /> component', () => {
     const wrapper = shallow(<Application />);
     expect(wrapper.find(Messages)).to.have.length(1);
@@ -30,8 +39,8 @@ describe('<Application />', () => {
 });
 
 describe('<Application />', () => {
-  it('renders one <Sort /> component', () => {
+  it('renders one <Users /> component', () => {
     const wrapper = shallow(<Application />);
-    expect(wrapper.find(Sort)).to.have.length(1);
+    expect(wrapper.find(Users)).to.have.length(1);
   });
 });
