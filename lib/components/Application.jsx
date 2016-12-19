@@ -58,15 +58,15 @@ export default class Application extends Component {
      {filteredMessages: filter(this.state.messages, (message) => {
        return message.content.toLowerCase().includes(filterString.toLowerCase());
      }),
-   filterString: filterString});
- }
+    filterString: filterString});
+  }
 
  filterByUser(user) {
     this.state.filterString = 1;
     this.setState(
       {filteredMessages: filter(this.state.messages, (message) => {
         return message.user.email.includes(user.email);
-      })
+      }),
     });
   }
 

@@ -16,9 +16,13 @@ export default class Users extends Component {
       <li
         key={u.id}
         className={userClass}
-        onClick={() => {this.props.filterByUser(u)}}
+        // onClick={() => {this.props.filterByUser(u)}}
         onClick={() => {console.log(u.id);}}>
-        <p tabIndex="0" className="user-name">{u.userName.split(' ').slice(0,1)} ({u.email})</p>
+        <p
+          onClick={() => {this.props.filterByUser(u)}}
+          tabIndex="0"
+          className="user-name"
+          >{u.userName.split(' ').slice(0,1)} ({u.email})</p>
       </li>
       //TODO set class for active user for the dot
     )

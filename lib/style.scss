@@ -176,13 +176,19 @@ h3 {
   width: 24px;
 }
 
-#submit-btn {
+#submit-btn, #log-btn {
   background-color: $submit-btn-background;
   margin-left: 50px;
 }
 
 #clear-btn {
   background-color: $clear-btn-background;
+}
+
+#log-btn {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */

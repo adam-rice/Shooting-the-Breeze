@@ -8,11 +8,13 @@ export default class EnterLeave extends Component {
         {this.props.user ? <div><h3 tabIndex="0">Logged in as <span>{this.props.user.displayName}</span> ({this.props.user.email})</h3>
         <button
           id="sign-out"
-          onClick={() => this.props.signOutFunction()}>Sign Out
+          onClick={() => this.props.signOutFunction()}
+          >Sign Out
         </button></div>
         : <button
+            id="log-btn"
             className="btn"
-            onClick={() => this.props.signInFunction()}>Sign In
+            onClick={() => this.props.signInFunction()}>Log In
           </button> }
       </section>
     )
