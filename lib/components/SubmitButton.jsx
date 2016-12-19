@@ -18,4 +18,4 @@ export default class SubmitButton extends Component {
   }
 }
 
-SubmitButton.defaultProps = {draftMessageProp: ''}
+// SubmitButton.defaultProps = {draftMessageProp: ''}

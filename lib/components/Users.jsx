@@ -12,6 +12,7 @@ export default class Users extends Component {
   }
 
   eachName(u, userClass) {
+    const { filterByUser } = this.props
     return (
       <li
         key={u.id}
@@ -19,7 +20,7 @@ export default class Users extends Component {
         // onClick={() => {this.props.filterByUser(u)}}
         onClick={() => {console.log(u.id);}}>
         <p
-          onClick={() => {this.props.filterByUser(u)}}
+          onClick={() => { filterByUser(u) }}
           tabIndex="0"
           className="user-name"
           >{u.userName.split(' ').slice(0,1)} ({u.email})</p>
