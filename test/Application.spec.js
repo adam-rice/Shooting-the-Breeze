@@ -52,18 +52,10 @@ describe('Application', () => {
     expect(wrapper.find('h1')).to.have.length(1);
   });
 
-it.skip('should change state if I add ideas to the dom', () => {
-    const wrapper = mount(<Main/>);
-    const title = wrapper.find('.CreateIdea-title');
-    title.simulate('change', title.node.value = 'testing title');
-
-    const body = wrapper.find('.CreateIdea-body');
-   body.simulate('change', body.node.value = 'testing body');
-   wrapper.find('.CreateIdea-submit').simulate('click');
-
-   expect(wrapper.state().ideas.length).to.equal(1);
-   expect(wrapper.state().ideas[0].title).to.equal('testing title');
-   expect(wrapper.state().ideas[0].title).to.equal('testing title');
-  });
+  it('calls componentDidMount', () => {
+    sinon.spy(Application.prototype, 'componentDidMount');
+    const wrapper = mount(<Application />);
+    expect(Application.prototype.componentDidMount.calledOnce).to.equal(true);
+   });
 
 });
