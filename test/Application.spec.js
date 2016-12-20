@@ -60,7 +60,7 @@ describe('Application', () => {
 
   it('should have a component that filters messages based on characters in the filter input', ()=> {
     const wrapper = mount(<Application />);
-    const input = wrapper.find('#msg-input');
+    // const input = wrapper.find('#msg-input');
     const filter = wrapper.find('#filter-input');
     wrapper.setState({user: 'Bilbo'});
     wrapper.setState({messages: [{

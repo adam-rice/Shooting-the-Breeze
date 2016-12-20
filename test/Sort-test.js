@@ -10,6 +10,10 @@ describe('Sort', ()=> {
     assert.equal(wrapper.type(), 'section');
   });
 
-  //
+  it('renders two buttons', () => {
+    const wrapper = shallow(<Sort toggle={(x) => {console.log(x)}} />)
+    const buttons = wrapper.find('input');
+    expect(buttons.length).to.equal(2);
+  });
 
 });
