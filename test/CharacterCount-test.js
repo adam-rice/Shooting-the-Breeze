@@ -11,9 +11,9 @@ describe('CharacterCount', () => {
     assert.equal(wrapper.type(), 'div');
   });
 
-  it.skip('counts the characters of the message field', () => {
+  it('decrements from 140 the characters of the message field', () => {
     const wrapper = shallow(<CharacterCount draftMessageProp="hello" />)
-    expect(wrapper.find('.character-count').text()).to.equal('5');
+    expect(wrapper.find('#char-count').text()).to.equal('135');
   });
 
 });
