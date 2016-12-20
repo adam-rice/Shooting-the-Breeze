@@ -1,7 +1,6 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import { assert, expect } from 'chai';
-import Locus from 'locus';
 
 import CharacterCount from '../lib/components/CharacterCount';
 
