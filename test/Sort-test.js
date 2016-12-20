@@ -6,12 +6,12 @@ import Sort from '../lib/components/Sort';
 
 describe('Sort', ()=> {
   it('renders as a <section>', () => {
-    const wrapper = shallow(<Sort toggle={(x) => {console.log(x)}} />)
+    const wrapper = shallow(<Sort toggle={() => {console.log('I love React!')}} />)
     assert.equal(wrapper.type(), 'section');
   });
 
   it('renders two buttons', () => {
-    const wrapper = shallow(<Sort toggle={(x) => {console.log(x)}} />)
+    const wrapper = shallow(<Sort toggle={() => {console.log('I love React!')}} />)
     const buttons = wrapper.find('input');
     expect(buttons.length).to.equal(2);
   });
