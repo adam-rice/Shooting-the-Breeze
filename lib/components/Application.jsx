@@ -20,7 +20,8 @@ export default class Application extends Component {
       draftMessage: '',
       user: null,
       filteredMessages: [],
-      filterString: ''
+      filterString: '',
+      descending: true
     };
   }
 
@@ -74,6 +75,11 @@ export default class Application extends Component {
     let messageArray = this.state.messages;
     let reverseArray = messageArray.reverse();
     this.setState({messages: reverseArray});
+    this.toggleDescendingState();
+  }
+
+  toggleDescendingState() {
+    this.state.descending ? this.setState( {descending: false }) : this.setState( {descending: true})
   }
 
  createFooter(user, draftMessage) {
@@ -103,8 +109,14 @@ export default class Application extends Component {
     }
   }
 
+  returnOppositeOfDescendingState() {
+    if (this.state.descending === true) {
+      return false
+    } else return true
+  }
+
   render() {
-    const { user, messages, draftMessage, filteredMessages } = this.state;
+    const { user, messages, draftMessage, filteredMessages, descending } = this.state;
     const messageList = this.filtered();
     return (
       <div>
@@ -114,7 +126,9 @@ export default class Application extends Component {
             filterMessageSection={this.filterMessageSection.bind(this)}/>
           <Sort
             messages={messageList}
-            sortFunction={this.sort.bind(this)}/>
+            sortFunction={this.sort.bind(this)}
+            toggle={this.returnOppositeOfDescendingState.bind(this)}
+            disabled={this.state.descending}/>
         </header>
         <section id="body">
           <article id="message-section">

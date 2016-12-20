@@ -9,13 +9,16 @@ export default class Sort extends Component {
           className="btn"
           type="button"
           value="Sort ↑"
-          onClick={this.props.sortFunction}/>
+          onClick={this.props.sortFunction}
+          disabled={this.props.toggle()}
+        />
         <input
           className="btn"
+          disabled={this.props.disabled}
           type="button"
           value="Sort ↓"
           onClick={this.props.sortFunction}/>
-      </section>
-    )
+        </section>
+      )
+    }
   }
-}
