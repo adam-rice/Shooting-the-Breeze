@@ -130,15 +130,17 @@ h2, .user-name {
 .user-name {
   font-weight: 400;
   letter-spacing: 0.3px;
+  display: flex;
 }
 
-//TODO update to green dot or something
 .user-list-current-user {
-  text-decoration: underline;
+  height: 18px;
+  width: 22px;
+  margin-left: 6px;
 }
 
 .user-list-user {
-  text-decoration: none;
+  display: none;
 }
 
 #logged-in {

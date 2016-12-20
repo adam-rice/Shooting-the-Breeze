@@ -12,19 +12,20 @@ export default class Users extends Component {
   }
 
   eachName(u, userClass) {
-    const { filterByUser } = this.props
+    const { filterByUser } = this.props;
     return (
       <li
-        key={u.id}
-        className={userClass}
-        onClick={() => {console.log(u.id);}}>
+        key={u.id}>
         <p
           onClick={() => { filterByUser(u) }}
           tabIndex="0"
           className="user-name"
-          >{u.userName.split(' ').slice(0,1)} ({u.email})</p>
+          >{u.userName.split(' ').slice(0,1)} ({u.email})
+          <svg className={userClass}>
+            <circle cx={8} cy={8} r={8} fill="#D25503" />
+          </svg>
+        </p>
       </li>
-      //TODO set class for active user for the dot
     )
   }
 
