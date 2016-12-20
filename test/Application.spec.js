@@ -56,6 +56,36 @@ describe('Application', () => {
     sinon.spy(Application.prototype, 'componentDidMount');
     const wrapper = mount(<Application />);
     expect(Application.prototype.componentDidMount.calledOnce).to.equal(true);
-   });
+  });
+
+  it('should have a component that filters messages based on characters in the filter input', ()=> {
+    const wrapper = mount(<Application />);
+    const input = wrapper.find('#msg-input');
+    const filter = wrapper.find('#filter-input');
+    wrapper.setState({user: 'Bilbo'});
+    wrapper.setState({messages: [{
+      user: {
+        displayName: 'Bilbo',
+        email: 'theShire@gmail.com',
+        uid: '0101'
+      },
+    content: 'Werewolf from Indiana'},
+    {user: {
+      displayName: 'Bilbo',
+      email: 'theShire@gmail.com',
+      uid: '0101'
+      },
+    content: 'Dracula from Indiana'},
+    {user: {
+      displayName: 'Bilbo',
+      email: 'theShire@gmail.com',
+      uid: '0101'
+      },
+      content: 'Frankenstein'
+    }] })
+    filter.simulate('change', {target: {value: 'Indiana'}})
+    expect(wrapper.state('filterString')).to.equal('Indiana');
+    expect(wrapper.state('filteredMessages').length).to.equal(2);
+  })
 
 });
