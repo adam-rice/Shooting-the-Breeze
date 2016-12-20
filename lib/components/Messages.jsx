@@ -30,4 +30,4 @@ export default class Messages extends Component {
   }
 }
 
-Messages.defaultProps = {messages: []}
+// Messages.defaultProps = {messages: []}
