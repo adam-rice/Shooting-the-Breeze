@@ -17,7 +17,6 @@ export default class Users extends Component {
       <li
         key={u.id}
         className={userClass}
-        // onClick={() => {this.props.filterByUser(u)}}
         onClick={() => {console.log(u.id);}}>
         <p
           onClick={() => { filterByUser(u) }}
