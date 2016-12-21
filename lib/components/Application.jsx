@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import React, { Component } from 'react';
 import firebase, { reference, signIn, signOut } from '../firebase';
 import { pick, map, extend, filter } from 'lodash';

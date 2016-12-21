@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import React from 'react';
 import { shallow } from 'enzyme';
 import { assert, expect } from 'chai';
