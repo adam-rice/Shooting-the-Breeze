@@ -41,8 +41,8 @@ export default class Application extends Component {
     reference.push({
       user: pick(user, 'displayName', 'email', 'uid'),
       content: draftMessage,
-      createdAt: moment().format('MMMM D, h:mma')
-      // TODO mobile version of date
+      createdAt: moment().format('MMMM D, h:mma'),
+      mobileCreatedAt: moment().format('MM/D, h:mma')
     });
     this.setState({ draftMessage: '' });
   }
