@@ -1,22 +1,21 @@
 @import 'reset';
 @import 'variables';
+@import "mixins";
+
 
 body {
   background-color: $main-background;
   font-size: 20px;
-  font-family: $main-font;
-  font-weight: 300;
+  @include font(300, $main-font);
 }
 
 #body {
-  height: 71vh;
-  width: 100vw;
+  @include size(75%, 100%);
 }
 
 header, footer, #blank-footer {
   background-color: $secondary-background;
-  height: 10vh;
-  width: 100%;
+  @include size(10%, 100%);
 }
 
 header {
@@ -26,8 +25,8 @@ header {
 
 footer, #blank-footer {
   bottom:0px;
-  position:fixed;
   left:0px;
+  position:fixed;
 }
 
 #blank-footer {
@@ -39,9 +38,8 @@ footer, #blank-footer {
 h1 {
   display: inline-block;
   color: $basic-color;
-  font-weight: 700;
-  font-family: $main-font;
   margin: 0 20px 0 50px;
+  @include font(700, $main-font);
 }
 
 #filter-input, #msg-input {
@@ -52,8 +50,7 @@ h1 {
   font-size: 15px;
   font-family: $main-font;
   text-indent: 12px;
-  height: 40px;
-  width: 300px;
+  @include size(40px, 300px);
 }
 
 #sort-btn-section {
@@ -67,9 +64,8 @@ h1 {
   color: $basic-color;
   font-size: 15px;
   font-family: $main-font;
-  height: 50px;
   margin: 5px;
-  width: 100px;
+  @include size(50px, 100px);
   &:hover {
     cursor: pointer;
   }
@@ -77,16 +73,14 @@ h1 {
 
 #sign-out {
   font-size: 10px;
-  height: 18px;
-  width: 75px;
+  @include size(18px, 75px);
 }
 
 #message-section {
   float: left;
-  height: 100%;
-  width: 65%;
   background-color: $basic-color;
   padding: 20px;
+  @include size(100vh, 65%);
 }
 
 .msg-list-item {
@@ -96,14 +90,14 @@ h1 {
 
 h5, h6 {
   color: $date-color;
-  font-weight: 400;
   display: inline-block;
+  @include font(400, $main-font);
 }
 
 h6 {
   color: $user-color;
-  font-weight: 700;
   margin-left: 16px;
+  @include font(700, $main-font);
 }
 
 .msg-text {
@@ -111,39 +105,41 @@ h6 {
   font-weight: 400;
 }
 
+.message-date-mobile {
+  display: $hide;
+}
+
 #active-user-list {
   background-color: $main-background;
   float: right;
   font-family: $main-font;
   padding: 24px 0 0 6px;
-  height: 100%;
-  width: 30%;
+  @include size(100vh, 30%);
 }
 
 h2, .user-name {
   color: $text-color;
-  font-weight: 700;
-  font-family: $main-font;
   margin-bottom: 15px;
+  @include font(700, $main-font);
 }
 
 .user-name {
-  font-weight: 400;
   letter-spacing: 0.3px;
   display: flex;
+  @include font(400, $main-font);
   &:hover {
     cursor: pointer;
   }
 }
 
 .user-email {
-  font-weight: 400;
+  @include font(400, $main-font);
 }
 
 .user-list-current-user {
-  height: 18px;
-  width: 22px;
   margin-left: 6px;
+  @include size(18px, 22px);
+
 }
 
 .user-list-user {
@@ -152,10 +148,10 @@ h2, .user-name {
 
 #logged-in {
   position: fixed;
-  bottom: 10vh;
-  height: 5vh;
-  width: 100%;
+  bottom: 10%;
   background-color: $user-login-background;
+  @include size(5%, 100%);
+
 }
 
 span {
@@ -195,19 +191,17 @@ h3 {
 }
 
 #log-btn {
-  margin-left: 10px;
   font-size: 1.5rem;
-  font-weight: 300;
+  margin-left: 10px;
+  @include font(300, $main-font);
+
 }
 
-#submit-panel {
+#submit-panel, #input-panel {
   display: inline-block;
-  border: 2px solid pink;
 }
 
 #input-panel {
-  display: inline-block;
-  border: 2px solid green;
   width: 83vw;
 }
 
@@ -239,30 +233,66 @@ h3 {
 }
 
 @media screen and (max-width:920px) {
-  h1, #active-user-list, #logged-in {
+  h1, #active-user-list, #logged-in, .message-date {
     display: $hide;
   }
 
   header, footer {
     flex-direction: column;
     justify-content: center;
+    height: 120px;
+  }
+
+  #filter-input, #msg-input {
+    font-size: 13px;
+    height: 30px;
   }
 
   #sort-btn-section {
     margin: inherit;
+    margin-top: 12px;
+  }
+
+  .btn, #sign-out {
+    font-size: 11px;
+    font-family: $main-font;
+    @include size(35px, 90px);
+  }
+
+  #body {
+    width: 100vw;
   }
 
   #message-section {
-    width: 100vw;
+    width: 100%;
+  }
+
+  .message-date-mobile {
+    display: inline-block;;
   }
 
   #input-panel {
     width: 100vw;
   }
 
+  #msg-input {
+    margin: 10px;
+    width: 85%;
+  }
+
+  #submit-btn, #log-btn {
+    margin-left: 0;
+  }
+
   footer {
     display: flex;
     text-align: center;
     height: 15vh;
+  }
+}
+
+@media screen and (max-width:600px) {
+  #msg-input {
+    width: 70%;
   }
 }
