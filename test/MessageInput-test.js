@@ -12,7 +12,7 @@ describe('MessageInput', () => {
     assert.equal(wrapper.type(), 'input');
   });
 
-  it('calls the setDraftMsg method when altered', () =>{
+  it('can be clicked', () =>{
     let onClick = sinon.spy();
     const wrapper = mount(<MessageInput stateProp={onClick}/>);
     wrapper.find('input').simulate('change');
