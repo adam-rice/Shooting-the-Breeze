@@ -89,18 +89,16 @@ export default class Application extends Component {
     } else {
       return (
         <footer>
-          <div id="input-panel">
             <MessageInput
               draftMessageProp={this.state.draftMessage} stateProp={this.setMsgState.bind(this)}/>
             <CharacterCount
               draftMessageProp={this.state.draftMessage}/>
-          </div>
-          <div id="submit-panel">
+            <div id="controls">
             <SubmitButton
               draftMessageProp={this.state.draftMessage} addMessageFunction={this.addNewMessage.bind(this)}/>
             <ClearButton
               draftMessageProp={this.state.draftMessage} clearMessageFunction={this.clearMsg.bind(this)}/>
-          </div>
+            </div>
         </footer>
       )
     }

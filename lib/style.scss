@@ -2,107 +2,63 @@
 @import 'variables';
 @import "mixins";
 
-
 body {
-  background-color: $main-background;
-  font-size: 20px;
-  @include font(300, $main-font);
-}
-
-#body {
-  @include size(75%, 100%);
-}
-
-header, footer, #blank-footer {
-  background-color: $secondary-background;
-  @include size(10%, 100%);
+  font-family: $font;
 }
 
 header {
+  background-color: $main-color;
+  color: $chat-window;
+  width: 100%;
+  height: $infobar;
+  padding: $padding;
   display: flex;
-  align-items: center;
-}
-
-footer, #blank-footer {
-  bottom:0px;
-  left:0px;
-  position:fixed;
-}
-
-#blank-footer {
-  background-color: $user-login-background;
-  z-index: -1;
-  padding: 15px;
-}
-
-h1 {
-  display: inline-block;
-  color: $basic-color;
-  margin: 0 20px 0 50px;
-  @include font(700, $main-font);
-}
-
-#filter-input, #msg-input {
-  background-color: $main-background;
-  border: $hide;
-  border-radius: 3px;
-  color: $text-color;
-  font-size: 15px;
-  font-family: $main-font;
-  text-indent: 12px;
-  @include size(40px, 300px);
-}
-
-#sort-btn-section {
-  margin: 0 25px 0 auto;
-}
-
-.btn, #sign-out {
-  border: $hide;
-  border-radius: 5px;
-  background-color: $sort-btn-background;
-  color: $basic-color;
-  font-size: 15px;
-  font-family: $main-font;
-  margin: 5px;
-  @include size(50px, 100px);
-  &:hover {
-    cursor: pointer;
+  h1 {
+    margin: auto 20px auto 50px;
+    @include font(700, $font);
   }
 }
 
-#sign-out {
-  font-size: 10px;
-  @include size(18px, 75px);
+#sort-btn-section {
+  margin: auto 25px auto auto;
+}
+
+#filter-input, #msg-input {
+  text-indent: 12px;
+  width: 30%;
+  height: 20px;
+  margin: auto 5px;
+  border: none;
+  border-radius: 3px;
+  background-color: $users;
+}
+
+#body {
+  height: 80vh;
+  position: relative;
+  li, p {
+    padding: $padding;
+  }
 }
 
 #message-section {
-  float: left;
-  background-color: $basic-color;
-  padding: 20px;
-  @include size(100vh, 65%);
-}
-
-.msg-list-item {
-  color: $msg-text-color;
-  margin: 12px 0 20px 0;
-}
-
-h5, h6 {
-  color: $date-color;
-  display: inline-block;
-  @include font(400, $main-font);
-}
-
-h6 {
-  color: $user-color;
-  margin-left: 16px;
-  @include font(700, $main-font);
-}
-
-.msg-text {
-  margin-top: 8px;
-  font-weight: 400;
+  background-color: $chat-window;
+  height: 80vh;
+  margin-left: 10px;
+  position: absolute;
+  left: 0;
+  width: 67%;
+  overflow: scroll;
+  .message-date, .message-date-mobile {
+    color: $date;
+  }
+  h6 {
+    display: inline-block;
+    color: $name;
+    font-weight: 400;
+    margin-left: 18px;
+    @include font(700, $font);
+  }
 }
 
 .message-date-mobile {
@@ -110,30 +66,24 @@ h6 {
 }
 
 #active-user-list {
-  background-color: $main-background;
-  float: right;
-  font-family: $main-font;
-  padding: 24px 0 0 6px;
-  @include size(100vh, 30%);
+  width: 33%;
+  height: 80vh;
+  background-color: $users;
+  right: 0;
+  position: absolute;
 }
 
 h2, .user-name {
-  color: $text-color;
-  margin-bottom: 15px;
-  @include font(700, $main-font);
+  color: $main-color;
+  margin: 6px auto;
+  @include font(700, $font);
 }
 
 .user-name {
-  letter-spacing: 0.3px;
-  display: flex;
-  @include font(400, $main-font);
+  @include font(400, $font);
   &:hover {
     cursor: pointer;
   }
-}
-
-.user-email {
-  @include font(400, $main-font);
 }
 
 .user-list-current-user {
@@ -147,152 +97,100 @@ h2, .user-name {
 }
 
 #logged-in {
-  position: fixed;
-  bottom: 10%;
-  background-color: $user-login-background;
-  @include size(5%, 100%);
-
+  background-color: $login;
+  color: $chat-window;
+  width: 100%;
+  height: $infobar;
+  padding: $padding;
 }
 
-span {
+.big-name {
   font-weight: 700;
-}
-
-h3 {
-  color: $basic-color;
-  font-family: $main-font;
-  padding: 10px;
 }
 
 #sign-out, h3 {
   display: inline-block;
 }
 
-#msg-input {
-  margin: 20px;
-  width: 85%;
-  display: inline-block;
+footer {
+  font-family: $font;
+  background-color: $main-color;
+  width: 100%;
+  height: 50px;
+  padding: $padding;
+  display: flex;
 }
 
 #char-count {
-  display: inline-block;
-  color: $basic-color;
-  font-family: $main-font;
-  width: 24px;
+  color: $chat-window;
+  margin: auto 3px;
+  padding: $padding;
+}
+
+.btn, #sign-out {
+  background-color: $sort;
+  font-family: $font;
+  color: $chat-window;
+  margin: auto 5px;
+  padding: $padding;
+  border: none;
+  border-radius: 5px;
 }
 
 #submit-btn, #log-btn {
-  background-color: $submit-btn-background;
-  margin-left: 50px;
+  background-color: $submit;
 }
 
 #clear-btn {
-  background-color: $clear-btn-background;
+  background-color: $clear;
 }
 
-#log-btn {
-  font-size: 1.5rem;
-  margin-left: 10px;
-  @include font(300, $main-font);
-
+#controls {
+  margin: auto 20px;
 }
 
-#submit-panel, #input-panel {
-  display: inline-block;
-}
-
-#input-panel {
-  width: 83vw;
-}
-
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: $text-color;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color: $text-color;
-   opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color: $text-color;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: $text-color;
-}
-
-@media screen and(max-width:1610px) {
-  #input-panel {
-    width: 60vw;
-  }
-}
-
-@media screen and (max-width:1120px) {
+@media screen and (max-width: 950px) {
   .user-email {
     display: $hide;
   }
 }
 
-@media screen and (max-width:920px) {
-  h1, #active-user-list, #logged-in, .message-date {
+@media screen and (max-width: 500px) {
+  #logged-in, #active-user-list, h1, .message-date {
     display: $hide;
   }
 
-  header, footer {
-    flex-direction: column;
-    justify-content: center;
-    height: 120px;
+  #sort-btn-section {
+    margin: auto;
   }
 
   #filter-input, #msg-input {
-    font-size: 13px;
-    height: 30px;
-  }
-
-  #sort-btn-section {
-    margin: inherit;
-    margin-top: 12px;
-  }
-
-  .btn, #sign-out {
-    font-size: 11px;
-    font-family: $main-font;
-    @include size(35px, 90px);
-  }
-
-  #body {
-    width: 100vw;
+    width: 50%;
+    margin: 10px 0;
   }
 
   #message-section {
     width: 100%;
+    height: 100%;
   }
 
   .message-date-mobile {
     display: inline-block;;
   }
 
-  #input-panel {
-    width: 100vw;
-  }
-
-  #msg-input {
-    margin: 10px;
-    width: 85%;
-  }
-
-  #submit-btn, #log-btn {
-    margin-left: 0;
-  }
-
-  footer {
-    display: flex;
+  header, footer {
     text-align: center;
-    height: 15vh;
+    display: block;
+    height: 80px;
+    width: 100%;
+    position: sticky;
   }
-}
 
-@media screen and (max-width:600px) {
-  #msg-input {
-    width: 70%;
+  #char-count {
+    display: inline-block;
+  }
+
+  #controls {
+    display: block;
   }
 }

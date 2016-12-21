@@ -1,15 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700);
-$main-font: 'Fira Sans', sans-serif;
+$font: 'Fira Sans', sans-serif;
 $hide: none;
 
-$basic-color:             #FFFFFF;
-$main-background:         #ECF0F1;
-$secondary-background:    #2C3E50;
-$user-login-background:   #95A5A5;
-$sort-btn-background:     #3498DB;
-$submit-btn-background:   #2ECC71;
-$clear-btn-background:    #E74C3C;
-$text-color:              #2C3E50;
+$chat-window:             #FFFFFF;
+$main-color:              #2C3E50;
+$users:                   #ECF0F1;
+$login:                   #95A5A6;
+$sort:                    #3498DB;
+$submit:                  #2ECC71;
+$clear:                   #E74C3C;
 $msg-text-color:          #5E6A7B;
-$user-color:              #2980B9;
-$date-color:              #9B59B6;
+$name:                    #2980B9;
+$date:                    #9B59B6;
+
+//Width/height variables
+$content-width: 100%;
+$window-height: 100%;
+$padding: 5px;
+$infobar: 30px;

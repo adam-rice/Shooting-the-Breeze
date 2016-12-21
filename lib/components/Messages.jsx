@@ -21,8 +21,8 @@ export default class Messages extends Component {
         <li key={m.key}
             tabIndex="0"
             className="msg-list-item">
-          <h5 className="message-date"> {m.createdAt}</h5>
-          <h5 className="message-date-mobile">{m.mobileCreatedAt}</h5>
+          <span className="message-date"> {m.createdAt}</span>
+          <span className="message-date-mobile">{m.mobileCreatedAt}</span>
           <h6> {m.user.displayName.split(' ').slice(0,1)}</h6>
           <p className="msg-text">{m.content}</p>
         </li>) }
