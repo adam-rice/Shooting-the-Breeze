@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import React, { Component } from 'react';
 import firebase, { reference, signIn, signOut } from '../firebase';
 import { pick, map, extend, filter } from 'lodash';
@@ -125,14 +126,14 @@ export default class Application extends Component {
     return (
       <div>
         <header>
-            <h1 tabIndex="0" >Shoot the Breeze</h1>
-            <FilterInput
-              filterMessageSection={this.filterMessageSection.bind(this)}/>
-            <Sort
-              messages={messageList}
-              sortFunction={this.sort.bind(this)}
-              toggle={this.returnOppositeOfDescendingState.bind(this)}
-              disabled={this.state.descending}/>
+          <h1 tabIndex="0" >{this.props.title}</h1>
+          <FilterInput
+            filterMessageSection={this.filterMessageSection.bind(this)}/>
+          <Sort
+            messages={messageList}
+            sortFunction={this.sort.bind(this)}
+            toggle={this.returnOppositeOfDescendingState.bind(this)}
+            disabled={this.state.descending}/>
         </header>
         <section id="body">
           <article id="message-section">
