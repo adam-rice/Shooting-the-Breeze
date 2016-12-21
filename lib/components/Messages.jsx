@@ -22,7 +22,7 @@ export default class Messages extends Component {
             tabIndex="0"
             className="msg-list-item">
           <h5 className="message-date"> {m.createdAt}</h5>
-          {/* mobile version */}
+          <h5 className="message-date-mobile">{m.mobileCreatedAt}</h5>
           <h6> {m.user.displayName.split(' ').slice(0,1)}</h6>
           <p className="msg-text">{m.content}</p>
         </li>) }

@@ -111,6 +111,10 @@ h6 {
   font-weight: 400;
 }
 
+.message-date-mobile {
+  display: $hide;
+}
+
 #active-user-list {
   background-color: $main-background;
   float: right;
@@ -239,7 +243,7 @@ h3 {
 }
 
 @media screen and (max-width:920px) {
-  h1, #active-user-list, #logged-in {
+  h1, #active-user-list, #logged-in, .message-date {
     display: $hide;
   }
 
@@ -254,6 +258,11 @@ h3 {
 
   #message-section {
     width: 100vw;
+  }
+
+  .message-date-mobile {
+    border: 2px solid orange;
+    display: inline-block;;
   }
 
   #input-panel {
