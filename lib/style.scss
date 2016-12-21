@@ -232,15 +232,37 @@ h3 {
   }
 }
 
-
 @media screen and (max-width:1120px) {
   .user-email {
     display: $hide;
   }
 }
 
-@media screen and (max-width:900px) {
-  h1 {
+@media screen and (max-width:920px) {
+  h1, #active-user-list, #logged-in {
     display: $hide;
+  }
+
+  header, footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #sort-btn-section {
+    margin: inherit;
+  }
+
+  #message-section {
+    width: 100vw;
+  }
+
+  #input-panel {
+    width: 100vw;
+  }
+
+  footer {
+    display: flex;
+    text-align: center;
+    height: 15vh;
   }
 }
