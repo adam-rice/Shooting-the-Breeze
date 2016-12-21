@@ -88,14 +88,18 @@ export default class Application extends Component {
     } else {
       return (
         <footer>
-          <MessageInput
-            draftMessageProp={this.state.draftMessage} stateProp={this.setMsgState.bind(this)}/>
-          <CharacterCount
-            draftMessageProp={this.state.draftMessage}/>
-          <SubmitButton
-            draftMessageProp={this.state.draftMessage} addMessageFunction={this.addNewMessage.bind(this)}/>
-          <ClearButton
-            draftMessageProp={this.state.draftMessage} clearMessageFunction={this.clearMsg.bind(this)}/>
+          <div id="input-panel">
+            <MessageInput
+              draftMessageProp={this.state.draftMessage} stateProp={this.setMsgState.bind(this)}/>
+            <CharacterCount
+              draftMessageProp={this.state.draftMessage}/>
+          </div>
+          <div id="submit-panel">
+            <SubmitButton
+              draftMessageProp={this.state.draftMessage} addMessageFunction={this.addNewMessage.bind(this)}/>
+            <ClearButton
+              draftMessageProp={this.state.draftMessage} clearMessageFunction={this.clearMsg.bind(this)}/>
+          </div>
         </footer>
       )
     }
@@ -121,14 +125,14 @@ export default class Application extends Component {
     return (
       <div>
         <header>
-          <h1 tabIndex="0" >Shoot the Breeze</h1>
-          <FilterInput
-            filterMessageSection={this.filterMessageSection.bind(this)}/>
-          <Sort
-            messages={messageList}
-            sortFunction={this.sort.bind(this)}
-            toggle={this.returnOppositeOfDescendingState.bind(this)}
-            disabled={this.state.descending}/>
+            <h1 tabIndex="0" >Shoot the Breeze</h1>
+            <FilterInput
+              filterMessageSection={this.filterMessageSection.bind(this)}/>
+            <Sort
+              messages={messageList}
+              sortFunction={this.sort.bind(this)}
+              toggle={this.returnOppositeOfDescendingState.bind(this)}
+              disabled={this.state.descending}/>
         </header>
         <section id="body">
           <article id="message-section">
