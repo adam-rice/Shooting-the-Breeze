@@ -23,7 +23,7 @@ export default class Users extends Component {
           className="user-name"
           >{u.userName.split(' ').slice(0,1)} <span className="user-email">({u.email})</span>
           <svg className={userClass}>
-            <circle cx={8} cy={8} r={8} fill="#D25503" />
+            <circle cx={8} cy={8} r={6} fill="#D25503" />
           </svg>
         </p>
       </li>
