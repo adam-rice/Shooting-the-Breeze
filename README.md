@@ -1,6 +1,6 @@
 # Shoot The Breeze
 
-![alt tag](https://github.com/andy-young/Shooting-the-Breeze/blob/master/chatRoom.png)
+![alt tag](https://github.com/andy-young/Shooting-the-Breeze/blob/master/screen.png)
 
 A chat room application built by [Andy Young](https://github.com/andy-young) and [Adam Rice](https://github.com/adam-rice) in module two at the Turing School of Software & Design. Tools used include the React library, Firebase, and Enzyme.
 
