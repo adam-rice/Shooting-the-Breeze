@@ -84,8 +84,10 @@ export default class Application extends Component {
   }
 
  createFooter(user, draftMessage) {
-  if (this.state.user === null) {
-    return (<div id="blank-footer"></div>)
+  if (!this.state.user) {
+    return (
+      <div id="blank-footer"></div>
+    )
     } else {
       return (
         <footer>

@@ -9,10 +9,9 @@ body {
 header {
   background-color: $main-color;
   color: $chat-window;
-  width: 100%;
-  height: $infobar;
-  padding: $padding;
   display: flex;
+  padding: $section-padding;
+  @include size($infobar, 100%);
   h1 {
     margin: auto 20px auto 50px;
     @include font(700, $font);
@@ -24,37 +23,33 @@ header {
 }
 
 #filter-input, #msg-input {
-  text-indent: 12px;
-  width: 30%;
-  height: 20px;
-  margin: auto 5px;
+  background-color: $users;
   border: none;
   border-radius: 3px;
-  background-color: $users;
+  font-family: $font;
+  margin: auto 5px;
+  text-indent: 12px;
+  @include size(20px, 30%);
 }
 
 #body {
   height: 80vh;
   position: relative;
-  li, p {
-    padding: $padding;
-  }
 }
 
 #message-section {
   background-color: $chat-window;
-  height: 80vh;
-  margin-left: 10px;
-  position: absolute;
   left: 0;
-  width: 67%;
+  margin-left: 10px;
   overflow: scroll;
+  position: absolute;
+  @include size(80vh, 67%);
   .message-date, .message-date-mobile {
     color: $date;
   }
   h6 {
-    display: inline-block;
     color: $name;
+    display: inline-block;
     font-weight: 400;
     margin-left: 18px;
     @include font(700, $font);
@@ -65,21 +60,27 @@ header {
   display: $hide;
 }
 
+.msg-text, .msg-list-item {
+  padding: $padding;
+  color: $msg-text-color;
+}
+
 #active-user-list {
-  width: 33%;
-  height: 80vh;
   background-color: $users;
-  right: 0;
   position: absolute;
+  right: 0;
+  @include size(80vh, 33%);
 }
 
 h2, .user-name {
   color: $main-color;
-  margin: 6px auto;
+  margin: 3px auto;
+  padding: $padding;
   @include font(700, $font);
 }
 
 .user-name {
+  display: flex;
   @include font(400, $font);
   &:hover {
     cursor: pointer;
@@ -89,19 +90,21 @@ h2, .user-name {
 .user-list-current-user {
   margin-left: 6px;
   @include size(18px, 22px);
-
 }
 
 .user-list-user {
   display: $hide;
 }
 
+.user-email {
+  margin-left: 4px;
+}
+
 #logged-in {
   background-color: $login;
   color: $chat-window;
-  width: 100%;
-  height: $infobar;
-  padding: $padding;
+  padding: $section-padding;
+  @include size($infobar, 100%);
 }
 
 .big-name {
@@ -110,31 +113,39 @@ h2, .user-name {
 
 #sign-out, h3 {
   display: inline-block;
+  margin-left: 8px;
 }
 
-footer {
-  font-family: $font;
+footer, #blank-footer {
   background-color: $main-color;
-  width: 100%;
-  height: 50px;
-  padding: $padding;
   display: flex;
+  font-family: $font;
+  padding: $section-padding;
+  @include size(65px, 100%);
+}
+
+#blank-footer {
+  background-color: $login;
 }
 
 #char-count {
   color: $chat-window;
   margin: auto 3px;
   padding: $padding;
+  width: 12px;
 }
 
 .btn, #sign-out {
   background-color: $sort;
-  font-family: $font;
+  border-radius: 5px;
+  border: none;
   color: $chat-window;
+  font-family: $font;
   margin: auto 5px;
   padding: $padding;
-  border: none;
-  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 #submit-btn, #log-btn {
@@ -147,6 +158,21 @@ footer {
 
 #controls {
   margin: auto 20px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: $main-color;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: $main-color;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: $main-color;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: $main-color;
 }
 
 @media screen and (max-width: 950px) {
@@ -170,8 +196,7 @@ footer {
   }
 
   #message-section {
-    width: 100%;
-    height: 100%;
+    @include size(100%, 100%);
   }
 
   .message-date-mobile {
@@ -179,11 +204,10 @@ footer {
   }
 
   header, footer {
-    text-align: center;
     display: block;
-    height: 80px;
-    width: 100%;
+    text-align: center;
     position: sticky;
+    @include size(80px, 100%);
   }
 
   #char-count {
