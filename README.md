@@ -7,7 +7,7 @@ A chat room application built by [Andy Young](https://github.com/andy-young) and
 ([Project Requirements](http://frontend.turing.io/projects/shoot-the-breeze))
 
 To join the chat:
-- Clone this repository using the command line.
+- Clone this repository
 - `npm install`
 - `npm start`
 - Visit the URL: http://localhost:8080/public/
