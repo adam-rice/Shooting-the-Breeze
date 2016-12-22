@@ -10,4 +10,4 @@ To join the chat:
 - Clone this repository using the command line.
 - `npm install`
 - `npm start`
-- Visit the url http://localhost:8080/public/
+- Visit the URL: http://localhost:8080/public/
